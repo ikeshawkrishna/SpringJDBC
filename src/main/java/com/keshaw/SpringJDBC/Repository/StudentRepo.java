@@ -43,7 +43,6 @@ public class StudentRepo {
 			
 			@Override
 			public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
-
 				Student s = new Student();
 				s.setRollNo(rs.getInt("rollno"));
 				s.setName(rs.getString("name"));
@@ -52,6 +51,7 @@ public class StudentRepo {
 				return s;
 			}
 		};
+		
 		return jdbc.query(sql, mapper);
 		
 //		return jdbc.query(sql, (ResultSet rs, int rowNum) -> {
